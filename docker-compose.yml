@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: "postgres-dev"
+    restart: always
+    hostname: postgres01
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    volumes:
+      - D:\docker_storage\postgresql:/var/lib/postgresql/data
+    networks:
+      - my-networks
+networks:
+  my-networks:
